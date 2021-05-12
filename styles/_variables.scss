@@ -1,0 +1,44 @@
+$blueDark: #22375F;
+$mainDark: #303030;
+$mainLight: #7B7B7B;
+
+$white: #fff;
+$black: #000;
+
+$mainShadow: 0 10px 25px #0000000F;
+
+@mixin elementFlex($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin selfPosition($justify, $align){
+  align-self: $align;
+  justify-self: $justify;
+}
+
+@mixin mainTitle(){
+  font-weight: 700;
+  font-style: italic;
+  font-size: 45px;
+  line-height: 45px;
+  color: $blueDark;
+}
+
+@mixin secondTitle(){
+  font-weight: 700;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 44px;
+  color: $blueDark;
+}
+
+@mixin normalText(){
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 36px;
+  color: $mainDark;
+}
