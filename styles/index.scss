@@ -8,7 +8,7 @@
   min-height: 100%;
   margin-top: 150px;
   .mainSection{
-    min-height: 600px;
+    max-height: 600px;
     &__picture{
       width: 100%;
     }
@@ -18,7 +18,8 @@
     min-height: 700px;
     display: grid;
     padding: 0 220px;
-    grid-template-columns: 60% 40%; 
+    grid-template-columns: 60% 40%;
+    overflow-x: hidden;
     &__text{
       @include elementFlex(column, center, flex-start);
       width: 100%;
@@ -47,8 +48,8 @@
       position: relative;
       &__background{
         position: absolute;
+        max-width: 863px;
         width: 863px;
-        height: 641px;
         z-index: -1;
       }
     }
@@ -63,7 +64,7 @@
     height: 800px;
     background: url(../img/section3-background.png) no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     padding: 0 170px;
     &__title{
       @include mainTitle();
@@ -88,7 +89,7 @@
     height: 100vh;
     background: url(../img/section4-background.png) no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     @include elementFlex(column, center, center);
     &__wrapper{
       @include elementFlex(column, flex-start, center);
@@ -123,7 +124,7 @@
       overflow-y: scroll;
       padding-right: 30px;
       &::-webkit-scrollbar-track{
-        -webkit-box-shadow: inset 0 0 6px rgba(141, 141, 141, 0.445);
+        box-shadow: inset 0 0 6px rgba(141, 141, 141, 0.445);
         border-radius: 10px;
         background-color: #F5F5F5;
       }
@@ -133,7 +134,6 @@
       }
       &::-webkit-scrollbar-thumb{
         border-radius: 10px;
-        // -webkit-box-shadow: inset 0 0 6px rgba(212, 212, 212, 0.144)
         background-color: rgb(155, 155, 155);
       }
     }
@@ -206,7 +206,8 @@
     grid-template-columns: 55% 45%;
     background: url(../img/section5-background.png) no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
+    background-origin: padding-box;
     &__text{
       @extend .catalog__text;
     }
@@ -250,6 +251,214 @@
       text-align: center;
       color: $black;
       margin-bottom: 65px;
+    }
+  }
+}
+
+@media(max-width: 1750px){
+  .container{
+    .catalog{
+      padding: 0 140px;
+    }
+    .carParts{
+      padding: 0 140px;
+    }
+    .footer{
+      padding: 0 140px;
+    }
+  }
+}
+
+@media(max-width: 1550px){
+  .container{
+    .catalog{
+      padding: 0 50px;
+      &__wrapper__background{
+        width: 100%;
+      }
+    }
+    .offer{
+      padding: 0 50px;
+      &__item{
+        width: 180px;
+        height: 200px;
+      }
+    }
+    .comments{
+      height: 110vh;
+      &__wrapper{
+        height: 90vh;
+        width: 90%;
+      }
+    }
+    .carParts{
+      padding: 0 50px;
+    }
+    .footer{
+      padding: 0 50px;
+    }
+  }
+}
+
+@media(max-width: 1300px){
+  .container{
+    .offer{
+      &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 50px;
+        align-items: center;
+        justify-items: center;
+      }
+    }
+  }
+}
+
+@media(max-width: 1050px){
+  .container{
+    .catalog{
+      grid-template-columns: 100%;
+      overflow-y: hidden;
+      &__wrapper{
+        padding-bottom: 100px;
+        &__background{
+          width: 60%;
+        }
+      }
+    }
+    .offer{
+      &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 50px;
+        align-items: center;
+        justify-items: center;
+      }
+    }
+    .comments{
+      &__wrapper{
+        width: 90%;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      &__item{
+        height: 220px;
+        &__rate{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 786px){
+  .container{
+    overflow-x: hidden;
+    .catalog{
+      padding: 0 16px;
+      &__title{
+        font-size: 30px;
+        letter-spacing: -1px;
+        text-align: center;
+      }
+      &__content{
+        padding-right: 0;
+        text-align: center;
+        &::after{
+          left: 50%;
+          transform: translateX(-50%);
+          width: 200px;
+        }
+      }
+      &__wrapper{
+        flex-direction: column;
+        margin-top: 50px;
+        .button{
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .offer{
+      height: auto;
+      padding: 0 16px 40px 16px;
+      &__title{
+        text-align: center;
+        font-size: 35px;
+        padding-right: 0;
+      }
+      &__wrapper{
+        @include elementFlex(column, flex-start, center);
+      }
+    }
+    .comments{
+      &__title,
+      &__subtitle{ 
+        text-align: center;
+        padding-bottom: 16px;
+      }
+      &__wrapper{
+        height: 100vh;
+        padding: 40px 5px;
+        width: 95%;
+        width: 95%;
+      }
+      &__container{
+        padding: 0;
+      }
+      &__item{
+        display: grid;
+        width: 100%;
+        height: auto;
+        padding: 20px 20px 20px 10px;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 100px 1fr;
+        &__photo{
+          grid-column: 1;
+          grid-row: 1;
+          width: auto;
+        }
+        &__container{
+          grid-column: 1 / 3;
+          grid-row: 2;
+          width: auto;
+        }
+        &__rate{
+          grid-row: 1;
+          grid-column: 2;
+          width: auto;
+          align-items: flex-end;
+        }
+        &__info{
+          font-size: 14px;
+          padding: 0px 0 15px 0;
+        }
+      }
+    }
+    .carParts{
+      grid-template-columns: 100%;
+      height: auto;
+      padding: 40px 16px;
+      &__content,
+      &__title{
+        text-align: center;
+      }
+      &__wrapper{
+        @include elementFlex(column, center, center);
+        padding: 50px 0 0 0;
+        &__logo{
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .footer{
+      height: 100vh;
+      padding: 50px 16px;
+      justify-content: flex-start;
+      span{
+        text-align: center;
+      }
     }
   }
 }

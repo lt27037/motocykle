@@ -34,7 +34,7 @@ a {
 }
 
 .container .mainSection {
-  min-height: 600px;
+  max-height: 600px;
 }
 
 .container .mainSection__picture {
@@ -49,6 +49,7 @@ a {
   padding: 0 220px;
   -ms-grid-columns: 60% 40%;
       grid-template-columns: 60% 40%;
+  overflow-x: hidden;
 }
 
 .container .catalog__text, .container .carParts__text {
@@ -116,8 +117,8 @@ a {
 
 .container .catalog__wrapper__background {
   position: absolute;
+  max-width: 863px;
   width: 863px;
-  height: 641px;
   z-index: -1;
 }
 
@@ -144,7 +145,7 @@ a {
   height: 800px;
   background: url(../img/section3-background.png) no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   padding: 0 170px;
 }
 
@@ -202,7 +203,7 @@ a {
   height: 100vh;
   background: url(../img/section4-background.png) no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,6 +293,7 @@ a {
 
 .container .comments__container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(141, 141, 141, 0.445);
+          box-shadow: inset 0 0 6px rgba(141, 141, 141, 0.445);
   border-radius: 10px;
   background-color: #F5F5F5;
 }
@@ -448,7 +450,8 @@ a {
       grid-template-columns: 55% 45%;
   background: url(../img/section5-background.png) no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
+  background-origin: padding-box;
 }
 
 .container .carParts__title {
@@ -531,5 +534,254 @@ a {
   text-align: center;
   color: #000;
   margin-bottom: 65px;
+}
+
+@media (max-width: 1750px) {
+  .container .catalog {
+    padding: 0 140px;
+  }
+  .container .carParts {
+    padding: 0 140px;
+  }
+  .container .footer {
+    padding: 0 140px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .container .catalog {
+    padding: 0 50px;
+  }
+  .container .catalog__wrapper__background {
+    width: 100%;
+  }
+  .container .offer {
+    padding: 0 50px;
+  }
+  .container .offer__item {
+    width: 180px;
+    height: 200px;
+  }
+  .container .comments {
+    height: 110vh;
+  }
+  .container .comments__wrapper {
+    height: 90vh;
+    width: 90%;
+  }
+  .container .carParts {
+    padding: 0 50px;
+  }
+  .container .footer {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container .offer__wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container .catalog {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    overflow-y: hidden;
+  }
+  .container .catalog__wrapper {
+    padding-bottom: 100px;
+  }
+  .container .catalog__wrapper__background {
+    width: 60%;
+  }
+  .container .offer__wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+  .container .comments__wrapper {
+    width: 90%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .container .comments__item {
+    height: 220px;
+  }
+  .container .comments__item__rate {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 786px) {
+  .container {
+    overflow-x: hidden;
+  }
+  .container .catalog {
+    padding: 0 16px;
+  }
+  .container .catalog__title {
+    font-size: 30px;
+    letter-spacing: -1px;
+    text-align: center;
+  }
+  .container .catalog__content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .container .catalog__content::after {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 200px;
+  }
+  .container .catalog__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 50px;
+  }
+  .container .catalog__wrapper .button {
+    margin-bottom: 30px;
+  }
+  .container .offer {
+    height: auto;
+    padding: 0 16px 40px 16px;
+  }
+  .container .offer__title {
+    text-align: center;
+    font-size: 35px;
+    padding-right: 0;
+  }
+  .container .offer__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .comments__title, .container .comments__subtitle {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .container .comments__wrapper {
+    height: 100vh;
+    padding: 40px 5px;
+    width: 95%;
+    width: 95%;
+  }
+  .container .comments__container {
+    padding: 0;
+  }
+  .container .comments__item {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    height: auto;
+    padding: 20px 20px 20px 10px;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    -ms-grid-rows: 100px 1fr;
+        grid-template-rows: 100px 1fr;
+  }
+  .container .comments__item__photo {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    width: auto;
+  }
+  .container .comments__item__container {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    width: auto;
+  }
+  .container .comments__item__rate {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 2;
+    grid-column: 2;
+    width: auto;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .container .comments__item__info {
+    font-size: 14px;
+    padding: 0px 0 15px 0;
+  }
+  .container .carParts {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    height: auto;
+    padding: 40px 16px;
+  }
+  .container .carParts__content, .container .carParts__title {
+    text-align: center;
+  }
+  .container .carParts__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 50px 0 0 0;
+  }
+  .container .carParts__wrapper__logo {
+    margin-bottom: 40px;
+  }
+  .container .footer {
+    height: 100vh;
+    padding: 50px 16px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .container .footer span {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=index.css.map */
