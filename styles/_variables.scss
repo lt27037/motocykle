@@ -26,6 +26,7 @@ $mainShadow: 0 10px 25px #0000002A;
   font-size: 45px;
   line-height: 45px;
   color: $blueDark;
+  text-transform: uppercase;
 }
 
 @mixin secondTitle(){
@@ -34,6 +35,7 @@ $mainShadow: 0 10px 25px #0000002A;
   font-size: 36px;
   line-height: 44px;
   color: $blueDark;
+  text-transform: uppercase;
 }
 
 @mixin normalText(){

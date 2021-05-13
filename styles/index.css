@@ -76,6 +76,7 @@ a {
   font-size: 36px;
   line-height: 44px;
   color: #22375F;
+  text-transform: uppercase;
   margin-bottom: 30px;
 }
 
@@ -155,6 +156,7 @@ a {
   font-size: 45px;
   line-height: 45px;
   color: #22375F;
+  text-transform: uppercase;
   padding: 0 150px 0 0;
   margin-bottom: 50px;
 }
@@ -270,6 +272,7 @@ a {
   font-size: 36px;
   line-height: 44px;
   color: #22375F;
+  text-transform: uppercase;
   font-size: 18px;
   line-height: 27px;
 }
@@ -460,6 +463,7 @@ a {
   font-size: 36px;
   line-height: 44px;
   color: #22375F;
+  text-transform: uppercase;
   margin-bottom: 35px;
 }
 
