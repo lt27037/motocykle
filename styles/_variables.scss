@@ -1,11 +1,12 @@
 $blueDark: #22375F;
 $mainDark: #303030;
 $mainLight: #7B7B7B;
+$mainGrey: #C4C4C4;
 
 $white: #fff;
 $black: #000;
 
-$mainShadow: 0 10px 25px #0000000F;
+$mainShadow: 0 10px 25px #0000002A;
 
 @mixin elementFlex($direction, $justify, $align){
   display: flex;
