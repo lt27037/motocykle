@@ -6,7 +6,6 @@
 .container{
   width: 100%;
   min-height: 100%;
-  margin-top: 150px;
   .mainSection{
     max-height: 600px;
     &__picture{
@@ -77,11 +76,20 @@
       margin-top: 50px;
     }
     &__item{
+      @include elementFlex(row, center, center);
       width: 200px;
       height: 225px;
       box-shadow: $mainShadow;
-      @include elementFlex(row, center, center);
       background-color: #fff;
+      transition: transform .1s;
+      &:hover{
+        transform: scale(1.1);
+      }
+      a{
+        @include elementFlex(column, center, center);
+        width: 200px;
+        height: 225px;
+      }
     }
   }
   .comments{

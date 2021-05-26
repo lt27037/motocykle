@@ -30,7 +30,6 @@ a {
 .container {
   width: 100%;
   min-height: 100%;
-  margin-top: 150px;
 }
 
 .container .mainSection {
@@ -180,10 +179,6 @@ a {
 }
 
 .container .offer__item {
-  width: 200px;
-  height: 225px;
-  -webkit-box-shadow: 0 10px 25px #0000002A;
-          box-shadow: 0 10px 25px #0000002A;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,7 +192,38 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 200px;
+  height: 225px;
+  -webkit-box-shadow: 0 10px 25px #0000002A;
+          box-shadow: 0 10px 25px #0000002A;
   background-color: #fff;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+}
+
+.container .offer__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .offer__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 225px;
 }
 
 .container .comments {
