@@ -16,7 +16,7 @@ a {
   width: 250px;
   height: 100px;
   border-style: none;
-  background-color: #22375F;
+  background: #22375F;
   color: #fff;
   font-size: 30px;
   font-style: italic;
@@ -25,6 +25,12 @@ a {
   -webkit-box-shadow: 0 10px 10px #0000003f;
           box-shadow: 0 10px 10px #0000003f;
   cursor: pointer;
+  -webkit-transition: background 0.1s;
+  transition: background 0.1s;
+}
+
+.button:hover {
+  background: #2b477a;
 }
 
 .container {
@@ -520,10 +526,26 @@ a {
   -ms-grid-column-align: center;
       justify-self: center;
   max-width: 250px;
-  min-width: 150px;
+  min-width: 148px;
 }
 
 .container .carParts__wrapper a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .carParts__wrapper a:last-of-type {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

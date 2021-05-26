@@ -236,9 +236,12 @@
       &__logo{
         @include selfPosition(center, center);
         max-width: 250px;
-        min-width: 150px;
+        min-width: 148px;
       }
       a{
+        @include elementFlex(column, center, center);
+      }
+      a:last-of-type{
         @include selfPosition(center, center);
         grid-column: 1 / 3;
       }
